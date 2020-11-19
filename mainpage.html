@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<!-- Create a div where the graph will take place -->
+<body>
+
+</body>
+
+
+<script>
+
+var dataset = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+var svg = d3.select("body")
+            .append("svg")
+            .attr("width", 5000)
+            .attr("height", 1000);
+
+var circles = svg.selectAll("circle")
+                 .data(dataset)
+                 .enter()
+                 .append("circle");
+
+ circles.attr("cx", function(d, i) { return i*5 + 50 ;})
+        .attr("cy", function(d, i) { return ((i%5)*25 + 100);})
+        .attr("r", 10)
+        .attr("fill", 'steelblue'
+          );
+
+
+</script>
